@@ -1,0 +1,118 @@
+
+
+
+.selectPickerWrapper{
+  width: 100%;
+  position: relative;
+  max-width: 290px;
+
+  .pickerWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 1000;
+
+    .countryCodeField{
+      display: flex;
+      align-items: center;
+      margin-right: 14px;
+      padding: 20px 0 20px 20px;
+      cursor: pointer;
+      .iconWrapper{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        background-position: center;
+        background-size: cover;
+      }
+      & span{
+        margin-left: 15px;
+        color: #344356 !important;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+    .phoneNumberField{
+      min-height: 10px;
+      height: 30px;
+      padding-left: 20px;
+      border-left: 1px solid rgba(192,192,192, 0.7);
+    }
+  }
+  .searchWrapper{
+    position: absolute;
+    top: 105%;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: all .3s ease-in-out;
+    z-index: 999;
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    .searchFieldWrapper{
+      padding: 12px 12px 0 12px;
+
+      .searchField{
+        border-radius: 6px;
+        transition: all .3s ease-in-out;
+        font-size: 14px;
+        border: 1px solid #e5e5ea;
+        padding: 7px 11px;
+        color: #575757;
+        min-height: 10px;
+        cursor: pointer;
+        &:focus{
+          border: 1px solid rgb(204, 233, 255);
+        }
+      }
+    }
+
+
+    .countryCodeList{
+      margin-top: 10px;
+      overflow: auto;
+      max-height: 100px;
+      font-size: 14px;
+      font-weight: 400;
+      .countryCodeOption{
+        display: block;
+        color: #344356;
+        transition: all .3s ease-in-out;
+        padding: 12px;
+        cursor: pointer;
+        &:last-child{
+          margin-bottom: 0;
+        }
+
+        &_active{
+          background-color: rgba(204, 233, 255, 0.5) !important;
+          color: #1675e0!important;
+        }
+        &_selected{
+          color: white!important;
+          background-color: #5468ff!important;
+        }
+        &:hover{
+          background-color: lightgray;
+        }
+      }
+      .noResult{
+        padding: 12px;
+        text-align: center;
+      }
+    }
+
+    &_active{
+      opacity: 1;
+      height: 160px;
+      transform: translateY(0);
+      overflow: visible;
+    }
+  }
+}

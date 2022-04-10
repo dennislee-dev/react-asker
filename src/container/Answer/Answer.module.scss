@@ -1,0 +1,441 @@
+@import "../../scss/settings";
+@import "../../scss/mixins";
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  //overflow: hidden;
+}
+
+.infoBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 10px;
+  width: 205px;
+  height: 46px;
+  padding: 2px;
+  background: rgba(243, 245, 249, 0.8);
+  box-shadow: 0px 17.7273px 18.9091px rgba(0, 20, 170, 0.03);
+  border-radius: 26px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  @include media-max($lg-break) {
+    margin-bottom: 25px;
+  }
+  @include media-max($md-break) {
+    margin-bottom: 0;
+  }
+  @include media-max($xs-break) {
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+}
+
+.infoBlockSmall {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 2px;
+  box-shadow: 0px 17.7273px 18.9091px rgba(0, 20, 170, 0.03);
+  z-index: 2;
+  background: transparent;
+  width: 65px;
+  height: 13px;
+  border-radius: 0;
+}
+
+.infoIcon {
+  position: relative;
+  top: 2px;
+  left: -5px;
+  min-width: 53px;
+  height: 52px;
+}
+
+.firstRotate {
+  transition: none !important;
+  animation: rotate .8s cubic-bezier(1, -0, 0.4, 1.39);
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(90deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.infoIconSmall {
+  position: relative;
+  top: 2px;
+  left: -5px;
+  min-width: 13px;
+  height: 10px;
+}
+
+.infoText {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  height: 100%;
+  width: calc(100% - 53px);
+  font-size: 12px;
+  line-height: 1.2;
+  color: $darkText;
+
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 60px;
+  perspective: 200vmin;
+  @include media-max($lg-break) {
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  @include media-max($md-break) {
+    align-items: center;
+    margin-bottom: 40px;
+  }
+}
+
+.logo {
+  min-width: 70px;
+  height: 31px;
+  position: absolute;
+  z-index: 5;
+  top: 9px;
+  right: 7px;
+}
+
+.cardInfo{
+  position: absolute;
+  z-index: 1000;
+  bottom: 40px;
+  width: 80%;
+  color: white;
+
+  & span{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    opacity: .8;
+    font-family: "Roboto", sans-serif;
+    @include media-max($xs-break) {
+      font-size: 15px;
+    }
+  }
+  & button{
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+
+}
+
+
+.loader{
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+}
+
+.beginBtn{
+  @include btn-reset();
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 16px;
+  background: #5468FF;
+  box-shadow: 0 10px 25px rgba(84, 104, 255, 0.3);
+  border-radius: 15px;
+  padding: 20px 0;
+  font-weight: 700;
+  font-family: HK Grotesk, sans-serif;
+  color: $white;
+  letter-spacing: 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include media-max(1440) {
+    font-size: 15px;
+    padding-right: 22px;
+  }
+
+  @include media-max($xs-break) {
+    border-radius: 12px;
+    padding: 15px 0;
+    font-size: 14px;
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
+
+  & div{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    background-color: #3D56F0;
+    right: 10px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    @include media-max($xs-break) {
+      height: 24px;
+      width: 24px;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      @include media-max($xs-break) {
+        height: 12px;
+        width: 12px;
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 0.9;
+    transition: $transition;
+  }
+}
+
+.cardWrap {
+  width: 338px;
+  height: 625px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4px;
+  overflow: hidden;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 625px;
+  //position: relative;
+  border-radius: 20px;
+  background-image: url("../../image/svg/mobileVector.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  backdrop-filter: blur(4px);
+  //margin-bottom: 60px;
+
+  @include media-max(1500) {
+    width: 261px;
+    height: 484px;
+    //border-radius: 16px;
+  }
+  @include media-max($lg-break) {
+    width: 244px;
+    height: 449px;
+    //height: 446px;
+  }
+  @include media-max($xs-break) {
+    width: 236px;
+    height: 437px;
+  }
+}
+
+.contentBox {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: calc(100% - 31px);
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  border-radius: 25px;
+  @include media-max(1500) {
+    height: calc(100% - 25px);
+    border-radius: 22px;
+  }
+  @include media-max($lg-break) {
+    height: calc(100% - 20px);
+    border-radius: 19px;
+  }
+  @include media-max($xs-break) {
+    height: calc(100% - 22px);
+  }
+}
+
+.cardContainer {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: calc(100% - 23px);
+  //background-image: url("../../image/svg/VideoMen.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 28px;
+  @include media-max(1500) {
+    height: calc(100% - 25px);
+  }
+  @include media-max($lg-break) {
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 14px);
+    border-radius: 18px;
+  }
+
+}
+
+.content {
+  @include btn-reset();
+  height: 58px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(84, 104, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(84, 104, 255, 0.3);
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  justify-content: flex-start;
+  padding: 20px 0 20px 15px;
+  @include media-max($xs-break) {
+    border-radius: 12px;
+    padding: 15px 0;
+    font-size: 14px;
+    padding-left: 15px;
+    height: auto;
+  }
+
+  span {
+    position: relative;
+    z-index: 10;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: HK Grotesk, sans-serif;
+    color: $white;
+    letter-spacing: 1px;
+    @include media-max($xs-break) {
+      font-size: 14px;
+    }
+  }
+
+  .redCircleWrap{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    z-index: 10;
+    background: rgba(255, 0, 0, 0.5);
+    right: 10px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media-max($xs-break) {
+      height: 24px;
+      width: 24px;
+      right: 6px;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      @include media-max($xs-break) {
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    .timer {
+      osition: relative;
+      z-index: 10;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: $main-font;
+      color: $white;
+      letter-spacing: 1px;
+      @include media-max($xs-break) {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.content .line {
+  height: 100%;
+  background: #1ABFB6;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 10px 25px rgba(84, 104, 255, 0.3);
+  font-weight: 700;
+  font-family: HK Grotesk, sans-serif;
+  color: $white;
+  letter-spacing: 1px;
+  padding: 20px 0;
+  top: 0;
+  left: 0;
+  -webkit-animation: dude 30s 1 forwards;
+  animation: dude 30s 1 forwards;
+  //animation-delay: 3s;
+}
+
+@-webkit-keyframes dude {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes dude {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.videoPreview{
+  height: 100%;
+  max-width: none;
+  position: absolute;
+  right: -50%;
+}

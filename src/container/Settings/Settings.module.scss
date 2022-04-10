@@ -1,0 +1,305 @@
+@import "../../scss/settings";
+@import "../../scss/mixins";
+
+.settingsContainer {
+  //position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.blur{
+  position: absolute;
+  overflow: hidden;
+  z-index: 1000;
+  //transition: all .3s ease-in-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //right: 0;
+  //bottom: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  backdrop-filter: blur(0px);
+  //pointer-events: auto;
+}
+.blur_active{
+  background: rgba(90, 109, 254, 0.15);
+  //background-color: transparent;
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+.settingsBackdrop {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  //padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(90, 109, 254, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+}
+
+.settingActive{
+  right: 0 !important;
+
+}
+.settingsBar {
+  display: flex;
+  right: -450px;
+  position: absolute;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.25s cubic-bezier(.25,.46,.45,.94);
+  background: rgba(84, 104, 255, 0.8);
+  opacity: 0.9;
+  border-radius: 0px 10px 10px 0px;
+  width: 350px;
+  z-index: 1001;
+  //width: calc(100% - 12em);
+  min-width: 350px;
+  padding: 0 40px 40px 50px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include media-max($md-break) {
+    min-width: 310px;
+    padding: 0 20px 40px;
+  }
+  @include media-max($sm-break) {
+    min-width: 400px;
+    padding: 0 40px 40px 60px;
+  }
+  @include media-max($xs-break) {
+    width: calc(100% - 10em);
+    min-width: 270px;
+    padding: 0 20px 40px;
+  }
+}
+
+/*.settingsBar{
+  animation:settingsBar 0.25s cubic-bezier(.25,.46,.45,.94) both;
+}
+@keyframes settingsBar{0%{transform:translateX(350px)}100%{transform:translateX(0)}}*/
+
+.settingsTitle {
+  margin-top: 40px;
+  display: flex;
+  opacity: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  height: 21px;
+  margin-bottom: 29px;
+
+  .text {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    color: $white;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    margin-left: 5px;
+
+  }
+  .icon {
+    fill: $white;
+    min-width: 21px;
+    height: 21px;
+    margin-bottom: 5px;
+  }
+
+}
+
+.infoCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background: rgba(88, 108, 255, 0.95);
+  box-shadow: 0px 12px 19px rgba(60, 128, 209, 0.09);
+  border-radius: 16px;
+  padding: 20px 13px 13px;
+  margin-bottom: 23px;
+
+  .accountIcon {
+    width: 120px;
+    height: 120px;
+    border: 9px solid white;
+    border-radius: 50%;
+    //margin: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../image/svg/SettingsBg.svg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 47px;
+    margin-top: 20px;
+  }
+
+}
+
+.infoBox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.infoLine {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-bottom: 21px;
+
+  .iconWrap {
+    position: relative;
+    //position: relative;
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ADB8FA;
+    @include media-max($xs-break) {
+      min-width: 25px;
+      height: 25px;
+    }
+  }
+
+  .lockIcon {
+    min-width: 17px;
+    height: 18px;
+    fill: $white;
+    @include media-max($xs-break) {
+      height: 15px;
+
+    }
+  }
+  .menIcon {
+    min-width: 15px;
+    height: 16px;
+    fill: $white;
+    @include media-max($xs-break) {
+      height: 13px;
+
+    }
+  }
+  .emailIcon {
+    min-width: 12px;
+    height: 12px;
+    fill: $white;
+    @include media-max($xs-break) {
+      height: 11px;
+    }
+  }
+  .pazlIcon {
+    min-width: 14px;
+    height: 15px;
+    fill: $white;
+  }
+  .twoMenIcon {
+    position: absolute;
+    min-width: 23px;
+    height: 29px;
+    top: 2px;
+    left: 0;
+    fill: $white;
+    @include media-max($xs-break) {
+      height: 23px;
+    }
+  }
+
+  .arrowBtn {
+    position: absolute;
+    right: 5px;
+    top: calc(50% - 15px);
+    @include btn-reset();
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arrowIcon {
+    min-width: 7px;
+    height: 11px;
+    fill: $white;
+  }
+
+  .infoIcon {
+    min-width: 30px;
+    width: 30px;
+    height: 38px;
+    fill: $white;
+  }
+
+  .contactBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 21px;
+    min-width: 165px;
+    max-width: 100%;
+
+
+    .titleInfo {
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.1;
+      text-align: center;
+      color: #FFFFFF;
+      @include media-max($md-break) {
+        font-size: 18px;
+      }
+      @include media-max($sm-break) {
+        font-size: 18px;
+      }
+      @include media-max($xs-break) {
+        font-size: 18px;
+      }
+    }
+    .textInfo {
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #FFFFFF;
+      @include media-max($md-break) {
+        font-size: 13px;
+      }
+      @include media-max($sm-break) {
+        font-size: 14px;
+      }
+      @include media-max($xs-break) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &.disabled {
+    //opacity: .4;
+  }
+}

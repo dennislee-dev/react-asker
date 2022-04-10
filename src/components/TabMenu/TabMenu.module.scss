@@ -1,0 +1,100 @@
+@import "../../scss/settings";
+@import "../../scss/mixins";
+
+.tabContainerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 99999;
+  //position: relative;
+  //z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  bottom: -1px;
+}
+
+
+
+.tabContainer {
+  border-radius: 30px 30px 0px 0px;
+  backdrop-filter: blur(30px);
+}
+
+
+.tabContainerSecondary{
+  width: 345px;
+  height: 64px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background-color:rgba(255,255,255, 0.8);
+  border-radius: 30px 30px 0px 0px;
+  @include media-max($xs-break) {
+    width: 300px;
+    height: 54px;
+    padding: 0 15px;
+    border-radius: 24px 24px 0px 0px;
+  }
+}
+
+.tabItem, .tabItemBtn {
+  @include btn-reset();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 65px;
+  font-family: 'Work Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #ADB8FA;
+  text-decoration: none;
+
+  @include media-max($xs-break) {
+    line-height: 1.1;
+  }
+
+  .taIcon {
+    fill: #ADB8FA;
+    min-width: 21px;
+    //height: 21px;
+    height: 16px;
+    margin-bottom: 5px;
+    @include media-max($xs-break) {
+      min-width: 18px;
+      height: 18px;
+    }
+    &:hover{
+      filter: drop-shadow(0px 3.93832px 3.93832px rgba(0, 0, 0, 0.1));
+    }
+  }
+
+
+  &:hover {
+    //@include btn-reset();
+    //opacity: .8;
+    color: #5468FF;
+    transition: $transition;
+    .taIcon {
+      fill: #5468FF;
+      transition: $transition;
+    }
+  }
+
+  &.activeTab {
+
+    //@include btn-reset();
+    color: #5468FF;
+    transition: $transition;
+    .taIcon {
+      filter: drop-shadow(0px 3.93832px 3.93832px rgba(0, 0, 0, 0.1));
+      fill: #5468FF;
+      transition: $transition;
+    }
+  }
+}

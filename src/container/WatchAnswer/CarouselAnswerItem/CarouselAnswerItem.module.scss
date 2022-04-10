@@ -1,0 +1,831 @@
+@import "../../../scss/settings";
+@import "../../../scss/mixins";
+
+.mainWrap {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 24px);
+  overflow: auto;
+  position: relative;
+  z-index: 10;
+  border-radius: 19px;
+  @include media-max($lg-break) {
+    min-height: 660px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.infoBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 10px;
+  width: 205px;
+  height: 46px;
+  padding: 2px;
+  background: rgba(243, 245, 249, 0.8);
+  box-shadow: 0px 17.7273px 18.9091px rgba(0, 20, 170, 0.03);
+  border-radius: 26px;
+  margin-bottom: 45px;
+  margin-top: 10px;
+  @include media-max($lg-break) {
+    margin-bottom: 25px;
+  }
+  @include media-max($md-break) {
+    margin-bottom: 0;
+  }
+  @include media-max($xs-break) {
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+}
+
+.logoBox {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  height: 50px;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+  background-image: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.56) 85%);
+  @include media-max($lg-break) {
+    justify-content: center;
+    height: 40px;
+    margin-top: 0;
+    background-image: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.56) 74%);
+    //box-shadow: 0 17.7273px 18.9091px rgba(0, 20, 170, 0.03);
+  }
+
+  .logo {
+    top: 6px;
+    position: relative;
+    height: 40px;
+    width: 70px;
+
+    @include media-max($lg-break) {
+      top: 2px;
+      height: 29px;
+      width: 51px;
+    }
+  }
+}
+
+
+.infoBlockSmall {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 2px 2px 10px;
+  //box-shadow: 0 17.7273px 18.9091px rgba(0, 20, 170, 0.03);
+  z-index: 2;
+  background: transparent;
+  width: calc(100% - 66px);
+  //height: 13px;
+  border-radius: 0;
+
+  @include media-max($lg-break) {
+    width: calc(100% - 65px);
+    padding: 2px;
+    margin-left: -8px;
+  }
+
+}
+
+.infoIcon {
+  position: relative;
+  top: 0;
+  left: -5px;
+  min-width: 53px;
+  height: 52px;
+
+  @include media-max($lg-break) {
+    top: 2px;
+  }
+}
+
+.infoIconSmall {
+  position: relative;
+  height: 40px;
+  width: 40px;
+
+  @include media-max($lg-break) {
+    top: 2px;
+    min-width: 31px;
+    height: 31px;
+  }
+}
+
+.infoTextSmall {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  height: 100%;
+  font-size: 10px;
+  width: calc(100% - 33px);
+  line-height: 1.2;
+  color: $white;
+
+  &__job {
+    font-weight: 700;
+    font-size: 11px;
+  }
+}
+
+.infoText {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  height: 100%;
+  width: calc(100% - 53px);
+  font-size: 12px;
+  line-height: 1.2;
+  color: $darkText;
+
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  //height: 600px;
+  width: 100%;
+  perspective: 200vmin;
+  @include media-max($lg-break) {
+    //align-items: center;
+    margin-bottom: 60px;
+    height: 470px;
+  }
+  @include media-max($md-break) {
+    //align-items: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  @include media-max($xs-break) {
+    height: 390px;
+    margin-top: 5px;
+  }
+}
+
+.cardWrap {
+  width: 331px;
+  height: 613px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  //overflow: hidden;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 625px;
+  position: relative;
+  top: 0;
+  border-radius: 24px;
+  background-image: url("../../../image/svg/WatchAnswer/WatchVioletPhone.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(4px);
+
+  @include media-max(1440) {
+    width: 261px;
+    height: 484px;
+  }
+  @include media-max($lg-break) {
+    width: 244px;
+    height: 446px;
+  }
+  @include media-max($md-break) {
+    border-radius: 21px;
+  }
+  //@include media-max($xs-break) {
+  //  width: 200px;
+  //  height: 366px;
+  //}
+}
+
+.cardLeft {
+  position: absolute;
+  left: -16em;
+  @include media-max($lg-break) {
+    left: -11em;
+  }
+  @include media-max($md-break) {
+    left: -13em;
+  }
+  @include media-max($sm-break) {
+    left: -10em;
+  }
+
+}
+
+.cardRight {
+  position: absolute;
+  top: 0;
+
+}
+
+.clickBox {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 76%;
+}
+
+.cutBox {
+  width: calc(100% - 8px);
+  position: relative;
+  height: calc(100% - 39px);
+  overflow: hidden;
+  top: 4px;
+  z-index: 10;
+  border-radius: 28px;
+  @include media-max(1440) {
+    border-radius: 22px;
+    height: calc(100% - 32px);
+    //height: calc(100% - 26px);
+  }
+  @include media-max($lg-break) {
+    height: calc(100% - 28px);
+    border-radius: 18px;
+  }
+  @include media-max($xs-break) {
+    height: calc(100% - 27px);
+    border-radius: 16px;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100% !important;
+  top: 0px;
+  left: 0;
+  //left: 3px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+
+  @include media-max($xs-break) {
+    left: 1px;
+  }
+}
+
+
+.cardWrapContact {
+  position: absolute;
+  top: 0;
+  width: 338px;
+  height: 618px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 625px;
+
+  border-radius: 20px;
+
+  @include media-max(1440) {
+    width: 261px;
+    height: 484px;
+  }
+  //@include media-max(1440) {
+  //  width: 311px;
+  //  height: 569px;
+  //}
+  @include media-max($lg-break) {
+    width: 244px;
+    height: 446px;
+  }
+  @include media-max($md-break) {
+    border-radius: 21px;
+  }
+  @include media-max($xs-break) {
+    //width: 200px;
+    //height: 366px;
+  }
+}
+
+.contentWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.cardContainerContact {
+  position: absolute;
+  z-index: 3;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -3px;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../image/svg/WatchAnswer/WatchVioletPhone.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+  }
+
+  .blur {
+    position: absolute;
+    z-index: 0;
+    top: 1px;
+    left: -3px;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 94%;
+    border-radius: 27px;
+    backdrop-filter: blur(15px);
+    transition: $transition;
+
+    &__none {
+      display: none;
+      transition: $transition;
+    }
+  }
+
+  .cardLeft {
+    position: absolute;
+    left: -16em;
+    @include media-max($lg-break) {
+      left: -17em;
+    }
+    @include media-max($md-break) {
+      left: -19em;
+    }
+
+  }
+
+  .cardRight {
+    position: absolute;
+    right: -16em;
+    @include media-max($lg-break) {
+      right: -17em;
+    }
+    @include media-max($md-break) {
+      right: -19em;
+    }
+  }
+
+  .cardWrap {
+    width: 338px;
+    height: 618px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    max-width: 100%;
+    max-height: 625px;
+    position: relative;
+    border-radius: 20px;
+    background-image: url("../../../image/svg/WatchAnswer/WatchVioletPhone.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(4px);
+
+    @include media-max(1440) {
+      width: 311px;
+      height: 569px;
+    }
+    @include media-max($lg-break) {
+      width: 244px;
+      height: 446px;
+    }
+    @include media-max($xs-break) {
+      width: 224px;
+      height: 407px;
+    }
+  }
+
+  .cardLeft {
+    position: absolute;
+    left: -16em;
+    @include media-max($lg-break) {
+      left: -11em;
+    }
+    @include media-max($md-break) {
+      left: -13em;
+    }
+    @include media-max($sm-break) {
+      left: -10em;
+    }
+    @include media-max($xs-break) {
+      left: -12em;
+    }
+  }
+
+  .cardRight {
+    position: absolute;
+    right: -16em;
+    @include media-max($lg-break) {
+      right: -11em;
+    }
+    @include media-max($md-break) {
+      right: -13em;
+    }
+    @include media-max($sm-break) {
+      right: -10em;
+    }
+    @include media-max($xs-break) {
+      right: -12em;
+    }
+  }
+
+  .cardContainer {
+    position: relative;
+    top: 0px;
+    left: 3px;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../image/svg/WatchAnswer/WatchMen.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include media-max($xs-break) {
+      left: 1px;
+    }
+  }
+
+  .contentBox {
+    position: relative;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    //justify-content: center;
+  }
+
+  .iconBox {
+    margin-top: 65px;
+    width: 130px;
+    height: 130px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media-max(1440) {
+    //@include media-max($lg-break) {
+      width: 84px;
+      min-height: 84px;
+      height: 84px;
+      margin-top: 25px;
+    }
+  }
+
+  .circleIcon {
+    min-width: 112px;
+    height: 112px;
+    fill: $white;
+    @include media-max(1440) {
+      min-width: 74px;
+      height: 74px;
+    }
+  }
+
+  .nameBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 28px;
+    margin-bottom: 60px;
+    @include media-max(1440) {
+      margin-top: 24px;
+      margin-bottom: 35px;
+    }
+  }
+
+  .name {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.3;
+    text-align: center;
+    color: #FFFFFF;
+    @include media-max(1440) {
+      font-size: 22px;
+    }
+  }
+
+  .starsBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .starsLine {
+    min-width: auto;
+    height: 28px;
+    @include media-max(1440) {
+      height: 17px;
+    }
+  }
+
+  .infoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 0 28px;
+    @include media-max(1440) {
+      padding: 0 14px;
+    }
+  }
+
+  .infoLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-bottom: 21px;
+
+    .infoIcon {
+      min-width: 30px;
+      height: 38px;
+      @include media-max(1440) {
+        min-width: 30px;
+        height: 30px;
+      }
+    }
+
+    .linkIconWrap {
+      @include btn-reset();
+      min-width: 31px;
+      height: 31px;
+      background-color: #7685FE;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+
+      &:hover {
+        opacity: 0.8;
+        transition: $transition;
+      }
+
+      .linkIcon {
+        min-width: 18px;
+        height: 8px;
+      }
+    }
+
+    .contactBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      margin-left: 21px;
+      min-width: 165px;
+      max-width: 100%;
+      @include media-max(1440) {
+        margin-left: 3px;
+        min-width: calc(100% - 68px);
+      }
+
+
+      .titleInfo {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.3;
+        text-align: center;
+        color: #FFFFFF;
+      }
+
+      .textInfo {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.3;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.iconWrap {
+  @include btn-reset();
+  background: transparent;
+
+  &:hover {
+    opacity: .8;
+    transition: $transition;
+    cursor: pointer;
+  }
+
+}
+
+.starIcon {
+  width: 21.07px;
+  height: 21.07px;
+  fill: $white;
+  margin: 0 6.98px;
+  transition: $transition;
+
+  @include media-max($lg-break) {
+    width: 18px;
+    height: 18px;
+  }
+  @include media-max($xs-break) {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__fill {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    fill: rgba(173, 184, 250, 0.5);
+    transition: $transition;
+    @include media-max($lg-break) {
+      width: 18px;
+      height: 18px;
+    }
+    @include media-max($xs-break) {
+      margin: 0 6px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.starIconBack {
+  width: 20px;
+  height: 20px;
+  fill: $white;
+  margin: 0 6px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &__fill {
+    width: 20px;
+    height: 20px;
+    margin: 0 6px;
+    fill: rgba(173, 184, 250, 0.5)
+  }
+}
+
+.contentStar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 45px 48px;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.71) 54%, transparent);
+  @include media-max(1440) {
+    padding: 15px 15px 35px;
+  }
+  @include media-max($lg-break) {
+    //padding: 15px 15px 16px;
+  }
+
+  .starRate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+
+    .material-icons {
+      color: #adb8fa;
+      opacity: 0.5;
+      padding: 0 5px;
+      cursor: pointer;
+
+      &:hover ~ .material-icons {
+        color: #ffffff;
+        opacity: 1;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .material-icons {
+        color: #ffffff;
+        opacity: 1;
+      }
+    }
+
+    .star-checked {
+      color: #ffffff;
+      opacity: 1;
+    }
+  }
+
+  p.questioText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 15px;
+    line-height: 1.2;
+    color: $white;
+
+    @include media-max($lg-break) {
+      font-size: 17px;
+    }
+    @include media-max($xs-break) {
+      font-size: 15px;
+    }
+  }
+}
+
+.imgVideo {
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    max-width: 100%;
+  }
+}
+
+.activeSlide {
+  background-color: #00d9cd !important;
+  opacity: 1 !important;
+}
+
+.rotateT{
+  position: absolute;
+  bottom: 8px;
+  z-index: -1;
+  fill: #6C7DFB;
+  left: calc(50% - 18px);
+  width: 36px;
+  height: 24px;
+
+  @include media-max(1440) {
+    bottom: 3px;
+  }
+  @include media-max($lg-break) {
+    bottom: 0;
+  }
+}
+
+.rotateT_back {
+  bottom: 8px;
+  fill: #697ef8;
+  z-index: 4;
+  @include media-max(1440) {
+    bottom: 6px;
+  }
+  @include media-max($lg-break) {
+    bottom: 0;
+  }
+}
+

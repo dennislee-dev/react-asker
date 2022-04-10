@@ -1,0 +1,141 @@
+@import "settings";
+
+@mixin media-max($query) {
+  @media (max-width: #{$query}px) {
+    @content;
+  }
+}
+
+@mixin media-max-wh($width, $height) {
+  @media (max-width: #{$width}px) and (max-height: #{$height}px) {
+    @content;
+  }
+}
+
+@mixin btn-reset {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@mixin btn-base {
+  @include btn-reset();
+  font-size: 19px;
+  line-height: 1;
+  background: $themeColor;
+  padding: 11px 40px 10px 40px;
+  border: none;
+  display: flex;
+  font-family: $main-font, sans-serif;
+  //font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+@mixin animationJS {
+  transform: translateZ(10px);
+  animation-name: $homeAnimation;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+}
+@mixin animationJSAnother {
+  transform: translateZ(10px);
+  animation-name: $homeAnimation;
+  animation-fill-mode:revert;
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+}
+@mixin animationJSDifferent {
+  transform: translateZ(10px);
+  animation-name: $homeAnimation;
+  animation-fill-mode:backwards;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+}
+
+
+@mixin triangle($size: 2rem, $background: red, $radius: true) {
+  &,
+  &::before,
+  &::after {
+    width: $size;
+    height: $size;
+  }
+
+  position: relative;
+  overflow: hidden;
+  transform: translateY(50%) rotate(30deg) skewY(30deg) scaleX(0.866);
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: $background;
+    pointer-events: auto;
+  }
+
+  &::before {
+    // prettier-ignore
+    transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(30deg) scaleY(0.866) translateX(-24%);
+  }
+
+  &::after {
+    // prettier-ignore
+    transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(-30deg) scaleY(0.866) translateX(24%);
+  }
+
+  @if ($radius) {
+    border-radius: 20%;
+
+    &::before {
+      border-radius: 20% 20% 20% 55%;
+
+    }
+
+    &::after {
+      border-radius: 20% 20% 55% 20%;
+
+    }
+  }
+}
+
+/**
+ * Usage:
+ */
+.triangle {
+
+  &-white {
+    width: 45px;
+    height: 45px;
+    border-radius: 20%;
+    background-image: url('../image/svg/white-arrow-down.svg');
+    //@include triangle(50px, $white, true);
+    //opacity: .9;
+    //transform: translate(0, 90%);
+  }
+
+  &-violet {
+    width: 55px;
+    height: 55px;
+    background-image: url('../image/svg/arow-down.svg');
+    background-repeat: no-repeat;
+  //rgba(84, 104, 255, 0.85) 7.1%, rgba(123, 139, 255, 0.85)
+  //  @include triangle(40px, rgba(123, 139, 255, 0.85), true);
+  //  @include triangle(40px, rgba(84, 104, 255, 0.85), true);
+  }
+
+}
+

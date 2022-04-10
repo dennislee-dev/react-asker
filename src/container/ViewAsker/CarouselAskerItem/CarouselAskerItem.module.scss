@@ -1,0 +1,516 @@
+@import "../../../scss/settings";
+@import "../../../scss/mixins";
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+
+.contentContainer {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  perspective: 200vmin;
+  @include media-max($sm-break) {
+    margin-bottom: 0;
+    align-items: flex-start;
+  }
+}
+
+.cardWrap {
+  width: 338px;
+  height: 475px;
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  max-height: 625px;
+  text-align: left !important;
+  min-height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(0px);
+  top: 0;
+
+  @include media-max($lg-break) {
+    width: 312px;
+    height: 430px;
+  }
+  @include media-max($sm-break) {
+    width: 280px;
+    height: 430px;
+  }
+  @include media-max($l-break) {
+    width: 250px;
+  }
+}
+
+
+.cardBg {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 3;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: $white;
+  background-size: cover;
+  backdrop-filter: blur(20px);
+}
+
+.cardBgSide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../../../image/svg/ShareAsker/shareBgWhite.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100% + 61px);
+  background-position: center;
+}
+
+.cardLeft {
+  position: absolute;
+  //width: 338px;
+  //height: 475px;
+  left: -16em;
+  @include media-max($lg-break) {
+    left: -17em;
+  }
+  @include media-max($md-break) {
+    left: -18em;
+  }
+  @include media-max($sm-break) {
+    left: -17em;
+  }
+  @include media-max($xs-break) {
+    left: -16em;
+    display: none;
+  }
+
+}
+
+.cardRight {
+  position: absolute;
+  right: -16em;
+  @include media-max($lg-break) {
+    right: -17em;
+  }
+  @include media-max($md-break) {
+    right: -18em;
+  }
+  @include media-max($sm-break) {
+    right: -17em;
+  }
+  @include media-max($xs-break) {
+    right: -16em;
+    display: none;
+  }
+
+}
+
+.cardContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  padding: 27px;
+  @include media-max($lg-break) {
+    padding: 20px;
+  }
+  @include media-max($sm-break) {
+    padding: 15px;
+  }
+}
+
+
+.rotate {
+  transform: rotate(-315deg);
+  position: absolute;
+  bottom: -20px;
+  z-index: -1;
+  left: calc(50% - 18px);
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 14px;
+  margin-top: 20px;
+
+  .letterIcon {
+    min-width: 125px;
+    height: 120px;
+  }
+}
+
+.questionBlock {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  width: calc(100% - 85px);
+  @include media-max($lg-break) {
+    width: calc(100% - 61px);
+  }
+}
+
+
+.questionBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  width: 100%;
+  //width: 231px;
+}
+
+.createLogo {
+  display: block;
+  min-width: 122px;
+  height: 122px;
+  //position: relative;
+  position: absolute;
+  top: 15px;
+  left: 9px;
+  @include media-max($lg-break) {
+    min-width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 9px;
+    left: 6px;
+  }
+}
+
+.questionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 14px;
+  width: 100%;
+  padding: 0 15px 0 12px;
+  margin-bottom: 5px;
+}
+
+.timesBox {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 2;
+
+  span {
+    color: #ADB8FA;
+
+    &.active {
+      color: #7685FE;
+    }
+  }
+}
+
+.textBox {
+  width: calc(100% - 5px);
+  color: rgba(96, 111, 129, 0.9);
+  margin-top: 10px;
+  white-space: initial;
+  //opacity: .8;
+  padding-left: 16px;
+
+
+  input {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    //min-height: 52px;
+    //height: 60px;
+    font-size: 12px;
+    line-height: 1;
+    text-align: start;
+    color: $darkText;
+    font-weight: 400;
+    border: none;
+    background: none;
+    appearance: none;
+    min-height: 10px;
+    padding: 3px 5px 3px 0;
+
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.title {
+  max-width: 150px;
+  text-overflow: ellipsis !important;
+  overflow: hidden;
+  display: block;
+  word-wrap: break-word;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  color: $darkText;
+  @include media-max($lg-break) {
+    font-size: 18px;
+  }
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  font-family: $main-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #344356;
+  opacity: .8;
+  @include media-max($lg-break) {
+    font-size: 13px;
+  }
+}
+
+.infoBlock {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 28px;
+  flex-grow: 1;
+  overflow: auto;
+  height: 100%;
+  max-height: 243px;
+  overflow-x: hidden;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  //margin-bottom: 27px;
+
+  @include media-max($lg-break) {
+    margin-bottom: 15px;
+  }
+
+  .circleBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 52px;
+    height: 30px;
+    @include media-max($lg-break) {
+      min-width: 42px;
+    }
+    @include media-max($xs-break) {
+      min-width: 34px;
+    }
+  }
+
+  .point {
+    min-width: 8px;
+    height: 8px;
+  }
+}
+
+.iconsBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 44px;
+  align-items: center;
+  font-family: $main-font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  color: #ADB8FA;
+
+  span {
+    position: relative;
+    top: - 9px
+  }
+}
+
+.textInfo {
+  display: flex;
+  align-items: center;
+  font-family: $main-font;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.7;
+  color: $darkText;
+  width: 196px;
+  opacity: .8;
+  @include media-max($lg-break) {
+    line-height: 1.4;
+  }
+}
+
+.iconClock {
+  width: 52px;
+  min-width: 52px;
+  height: 49px;
+  position: relative;
+  stroke: #ADB8FA;
+}
+
+
+.buttonBox {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.buttonStyle {
+  background: $themeColor;
+  width: 100%;
+}
+
+.plusIconBox {
+  position: absolute;
+  top: calc(50% - 16px);
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3D56F0;
+  border-radius: 50%;
+
+  .shareIcon {
+    min-width: 16px;
+    height: 15px;
+    position: relative;
+    margin-left: 1px;
+  }
+}
+
+.grayBg {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  width: 90%;
+  height: auto;
+  bottom: 0;
+}
+
+
+.menuWBox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  padding: 15px 25px 0 25px;
+  opacity: 0.6;
+}
+
+.burgerBtn {
+  @include btn-reset();
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.8;
+    transition: $transition;
+  }
+}
+
+.burgerIcon {
+  height: 13px;
+  width: 20px;
+  fill: #7685FE;
+}
+
+
+.cardWrapContact {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 625px;
+  width: 338px;
+  height: 475px;
+  @include media-max($lg-break) {
+    width: 312px;
+    height: 430px;
+  }
+  @include media-max($sm-break) {
+    width: 280px;
+    height: 430px;
+  }
+  @include media-max($l-break) {
+    width: 250px;
+  }
+}
+
+.cardWrapOption {
+  width: 338px;
+  height: 475px;
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  max-height: 625px;
+  text-align: left !important;
+  min-height: 200px;
+  @include media-max($lg-break) {
+    width: 312px;
+    height: 430px;
+  }
+
+}
+
+.rotateT {
+  position: absolute;
+  bottom: -22px;
+  z-index: -1;
+  fill: #fcfcff;
+  left: calc(50% - 12px);
+  width: 36px;
+  height: 24px;
+}
+
+.whitePipka{
+  z-index: 1000!important;
+  transform: rotateY(0);
+}

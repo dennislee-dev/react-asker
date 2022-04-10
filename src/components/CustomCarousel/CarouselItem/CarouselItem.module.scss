@@ -1,0 +1,325 @@
+@import "../../../scss/settings";
+@import "../../../scss/mixins";
+
+.itemWrap {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 1200px;
+  max-width: 100%;
+  background-color: $white;
+  @include media-max($sm-break) {
+    height: 100%;
+  }
+}
+
+.contentRow {
+  display: flex;
+  justify-content: center;
+  height: 350px;
+  padding: 40px;
+  p {
+    overflow: auto;
+    display: flex;
+    line-height: 1.4;
+    color: #31414C;
+    font-size: 15px;
+  }
+  @include media-max($lg-break) {
+    padding: 25px;
+  }
+  @include media-max($md-break) {
+    height: 440px;
+    p {
+      height: 240px;
+    }
+  }
+  @include media-max($sm-break) {
+    flex-direction: column;
+    height: 480px;
+    padding: 0;
+    p {
+      height: 240px;
+    }
+  }
+  @include media-max($xs-break) {
+    height: 440px;
+    p {
+      height: 210px;
+    }
+  }
+  //@include media-max($l-break) {
+  //  height: 440px;
+  //  p {
+  //    height: 210px;
+  //  }
+  //}
+  //@include media-max($xxs-break) {
+  //  //height: 520px;
+  //}
+}
+
+.imgCol {
+  display: flex;
+  padding-right: 40px;
+  margin: 0;
+  @include media-max($lg-break) {
+    padding-left: 45px;
+  }
+  @include media-max($sm-break) {
+    //height: 280px;
+    margin-bottom: 20px;
+    padding: 0 60px;
+  }
+  @include media-max($xs-break) {
+    //height: 230px;
+    padding: 0 15px;
+  }
+}
+
+.bigText {
+  p {
+    font-size: 17px;
+    @include media-max($md-break) {
+      font-size: 15px;
+    }
+  }
+}
+
+.coverPhoto {
+  width: 130px;
+  height: 130px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 20px auto 0 auto;
+
+  //&.amfin {
+  //  background-image: url($cdn + "carousel/Amfin 2.jpg")
+  //}
+  //
+  //&.coceptive {
+  //  background-image: url($cdn + "carousel/Coceptive.jpg")
+  //}
+  //
+  //&.disney {
+  //  background-image: url($cdn + "carousel/disney_2.jpg")
+  //}
+  //
+  //&.mkg {
+  //  background-image: url($cdn + "carousel/mkg events.jpg")
+  //}
+  //
+  //&.mtc {
+  //  background-image: url($cdn + "carousel/mtc concepts.jpg")
+  //}
+  //
+  //&.onsolar {
+  //  background-image: url($cdn + "carousel/onsolar.jpg")
+  //}
+  //
+  //&.sola {
+  //  background-image: url($cdn + "carousel/sola.io.jpg")
+  //}
+  //
+  //&.t_t {
+  //  background-image: url($cdn + "carousel/t_t.jpg")
+  //}
+  //
+  //&.adam {
+  //  background-image: url($cdn + "carousel/w talent adam.jpg")
+  //}
+}
+
+//@media(-webkit-min-device-pixel-ratio: 2),
+//(min-resolution: 192dpi) {
+//  .coverPhoto {
+//    &.amfin {
+//      //background-image: url($cdn + "carousel/Amfin 2@2x.jpg")
+//    }
+//
+//    &.coceptive {
+//      background-image: url($cdn + "carousel/Coceptive@2x.jpg")
+//    }
+//
+//    &.disney {
+//      background-image: url($cdn + "carousel/disney_2@2x.jpg")
+//    }
+//
+//    &.mkg {
+//      background-image: url($cdn + "carousel/mkg events@2x.jpg")
+//    }
+//
+//    &.mtc {
+//      background-image: url($cdn + "carousel/mtc concepts@2x.jpg")
+//    }
+//
+//    &.onsolar {
+//      background-image: url($cdn + "carousel/onsolar@2x.jpg")
+//    }
+//
+//    &.sola {
+//      background-image: url($cdn + "carousel/sola.io@2x.jpg")
+//    }
+//
+//    &.t_t {
+//      background-image: url($cdn + "carousel/t_t@2x.jpg")
+//    }
+//
+//    &.adam {
+//      background-image: url($cdn + "carousel/w talent adam@2x.jpg")
+//    }
+//  }
+//}
+//
+//:global {
+//  .webp {
+//    :local {
+//      .coverPhoto {
+//        &.amfin {
+//          background-image: url($cdn + "carousel/Amfin_2.webp")
+//        }
+//
+//        &.coceptive {
+//          background-image: url($cdn + "carousel/Coceptive.webp")
+//        }
+//
+//        &.disney {
+//          background-image: url($cdn + "carousel/disney_2.webp")
+//        }
+//
+//        &.mkg {
+//          background-image: url($cdn + "carousel/mkg_events.webp")
+//        }
+//
+//        &.mtc {
+//          background-image: url($cdn + "carousel/mtc_concepts.webp")
+//        }
+//
+//        &.onsolar {
+//          background-image: url($cdn + "carousel/onsolar.webp")
+//        }
+//
+//        &.sola {
+//          background-image: url($cdn + "carousel/sola.io.webp")
+//        }
+//
+//        &.t_t {
+//          background-image: url($cdn + "carousel/t_t.webp")
+//        }
+//
+//        &.adam {
+//          background-image: url($cdn + "carousel/w_talent_adam.webp")
+//        }
+//      }
+//
+//
+//      @media(-webkit-min-device-pixel-ratio: 2),
+//      (min-resolution: 192dpi) {
+//        .coverPhoto {
+//          &.amfin {
+//            background-image: url($cdn + "carousel/Amfin_2_2x.webp")
+//          }
+//
+//          &.coceptive {
+//            background-image: url($cdn + "carousel/Coceptive_2x.webp")
+//          }
+//
+//          &.disney {
+//            background-image: url($cdn + "carousel/disney_2_2x.webp")
+//          }
+//
+//          &.mkg {
+//            background-image: url($cdn + "carousel/mkg_events_2x.webp")
+//          }
+//
+//          &.mtc {
+//            background-image: url($cdn + "carousel/mtc_concepts_2x.webp")
+//          }
+//
+//          &.onsolar {
+//            background-image: url($cdn + "carousel/onsolar_2x.webp")
+//          }
+//
+//          &.sola {
+//            background-image: url($cdn + "carousel/sola.io_2x.webp")
+//          }
+//
+//          &.t_t {
+//            background-image: url($cdn + "carousel/t_t_2x.webp")
+//          }
+//
+//          &.adam {
+//            background-image: url($cdn + "carousel/w_talent_adam_2x.webp")
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px 0 20px 0;
+  height: 100%;
+  justify-content: space-between;
+
+  @include media-max($sm-break) {
+    height: auto;
+    padding: 0 60px 30px;
+  }
+  @include media-max($xs-break) {
+    padding: 0 15px 10px;
+  }
+}
+
+.text {
+  font-size: 17px;
+  color: #73787B;
+  font-weight: 400;
+  line-height: 1.4;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  @include media-max($md-break) {
+    font-size: 15px;
+  }
+  @include media-max($xs-break) {
+    font-size: 14px;
+  }
+  @include media-max($l-break) {
+    font-size: 13px;
+  }
+  @include media-max($xxs-break) {
+    font-size: 12px;
+  }
+}
+
+.userName {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #8C959B;
+  font-weight: 400;
+  text-align: left;
+  @include media-max($md-break) {
+    font-size: 16px;
+  }
+  @include media-max($sm-break) {
+    font-size: 15px;
+  }
+  @include media-max($xs-break) {
+    font-size: 14px;
+  }
+  @include media-max($l-break) {
+    font-size: 13px;
+  }
+  @include media-max($xxs-break) {
+    font-size: 12px;
+  }
+}

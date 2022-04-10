@@ -1,0 +1,80 @@
+@import 'import-fonts';
+@import "animation";
+
+$transition: 600ms;
+
+//// fonts --------------------------------------------------//
+
+//$fontText: 'HK Grotesk';
+$main-font: 'HK Grotesk', sans-serif;
+$fontRoboto: "Roboto", sans-serif;
+
+// break points (px)
+$lg-break: 1199;
+$md-break: 991;
+$sm-break: 767;
+$xs-break: 575;
+$l-break: 426;
+$xxs-break: 359;
+
+// --------------------------------------------------//
+$modal-fade-transform:              translate(0, -50px) !default;
+$modal-show-transform:              none !default;
+$modal-transition:                  transform .3s ease-out !default;
+$modal-scale-transform:             scale(1.02) !default;
+//$modal-title-line-height:           $line-height-base !default;
+
+//$modal-content-color:               null !default;
+//$modal-content-bg:                  $white;
+////$modal-content-border-color:        rgba($black, .2) !default;
+////$modal-content-border-width:        $border-width !default;
+////$modal-content-border-radius:       $border-radius-lg !default;
+////$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
+//$modal-content-box-shadow-xs:       0 .25rem .5rem rgba($darkText, .5) !default;
+//$modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($darkText, .5) !default;
+//
+////$modal-backdrop-bg:                 $black !default;
+//$modal-backdrop-opacity:            .5 !default;
+////$modal-header-border-color:         $border-color !default;
+////$modal-footer-border-color:         $modal-header-border-color !default;
+////$modal-header-border-width:         $modal-content-border-width !default;
+////$modal-footer-border-width:         $modal-header-border-width !default;
+////$modal-header-padding-y:            1rem !default;
+////$modal-header-padding-x:            1rem !default;
+////$modal-header-padding:
+
+  // colors --------------------------------------------------//
+
+/*
+    THEME : START =>
+    FOR -- Color, ColorYellow, ColorRed, ColorGreen, ColorText;
+*/
+
+
+$themeColor: #5468FF;
+$themeColorSimilar: #7686ff;
+$themeColorBase: #00D9CD;
+$themeColorOrange: #FF5A00;
+$themeColorText: #4B494B;
+$themeBlue: #1F47D6;
+$text: #626262;
+$white: #ffffff;
+$red: #f22340;
+$darkText: #344356;
+
+$themeBootstrapContainer: 1440px;
+$themeBootstrapRow: -6px;
+$themeBootstrapCol: 6px;
+
+$homeAnimation: homeAnimation
+
+
+//font-family: "Roboto", sans-serif;
+//font-style: normal;
+//font-weight: bold;
+//font-size: 16px;
+//line-height: 19px;
+//text-align: center;
+//letter-spacing: 1px;
+//text-transform: uppercase;
+//color: #FFFFFF;

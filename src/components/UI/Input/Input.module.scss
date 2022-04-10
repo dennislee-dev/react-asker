@@ -1,0 +1,118 @@
+@import "../../../scss/settings";
+@import "../../../scss/mixins";
+
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  //margin-bottom: 20px;
+  position: relative;
+}
+
+.Input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 64px;
+  //max-width: 100%;
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  max-width: 290px;
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  min-width: 60px;
+  height: 100%;
+}
+
+.addPading {
+  margin-bottom: 10px;
+}
+
+input {
+  display: flex;
+  justify-content: space-between;
+  //width: calc(100% - 60px);
+  width: 100%;
+  max-width: 100%;
+  min-height: 65px;
+  font-size: 14px;
+  line-height: 1;
+  text-align: start;
+  color: $darkText;
+  font-weight: 400;
+  font-family: $main-font;
+  padding-right: 15px;
+  border: none;
+  background: none;
+  appearance: none;
+  height: auto;
+  &.withPrefix {
+    padding-left: 0;
+  }
+  text-overflow: ellipsis;
+  @include media-max($xs-break) {
+    font-size: 15px;
+    @-moz-document url-prefix()
+    {
+      font-size:14px;
+      //padding-top:30px;
+    }
+  }
+
+  &::placeholder {
+    color: #979797;
+    //opacity: 0;
+    font-weight: 400;
+    text-align: start;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    //background: #FAFAFA;
+    color: #A0B2BE;
+    border-radius: 5px;
+  }
+}
+
+.showText {
+  @include btn-reset();
+  display: flex;
+  min-width: 40px;
+  height: 100%;
+  align-items: center;
+  color: #979797;
+  font-family: $fontRoboto;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.error-message {
+  color: $red;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  font-weight: 500;
+  font-family: $main-font;
+  font-size: 13px;
+  line-height: 1;
+  padding-left: 30px;
+}

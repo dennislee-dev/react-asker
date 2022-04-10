@@ -1,0 +1,265 @@
+@import "../../scss/settings";
+@import "../../scss/mixins";
+
+
+.rightContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 19px;
+  background-color: #f8faff;
+
+}
+
+.homeWrap {
+  width: 100%;
+  @include media-max($sm-break) {
+    display: none;
+  }
+}
+.dashboardHideButtomHeader{
+  @include media-max($md-break) {
+    display: none;
+  }
+}
+.rightContent {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include media-max($md-break) {
+    padding-top: 60px;
+  }
+}
+
+.tellmeContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 100%;
+  width: 400px;
+  margin: 0 auto;
+  //align-items: center;
+  & span{
+    line-height: 1;
+  }
+  @include media-max($md-break){
+    width: 250px;
+  }
+}
+
+.greenIcon {
+  width: 105px;
+  height: 120px;
+  position: absolute;
+  top: 80px;
+  right: 72px;
+  @include animationJS();
+  @include media-max($lg-break) {
+    top: 0;
+    width: 95px;
+    height: 110px;
+  }
+  @include media-max($md-break) {
+    top: -12px;
+    width: 79px;
+    height: 84px;
+  }
+  @include media-max($sm-break) {
+    top: 10px;
+  }
+  @include media-max($xs-break) {
+    display: none;
+  }
+
+}
+.MoveOnBottomInDashboard{
+  @include media-max($md-break) {
+    top: 8px;
+    width: 79px;
+    height: 84px;
+  }
+}
+
+.wrapIcon{
+  position: relative;
+  width: 100%;
+}
+.violetIcon {
+  position: absolute;
+  top: -42px;
+  right: -50px;
+  width: 105px;
+  height: 120px;
+  @include animationJS();
+  @include media-max($lg-break) {
+    top: -79px;
+    right: 28px;
+    width: 95px;
+    height: 110px;
+  }
+  @include media-max($md-break) {
+    width: 76px;
+    height: 93px;
+    right: -50px;
+  }
+  @include media-max($xs-break) {
+    display: none;
+  }
+}
+
+.typedTextWrap {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  height: 280px;
+  padding-top: 25px;
+  @include media-max($lg-break) {
+    height: 260px;
+  }
+  @include media-max($sm-break) {
+    min-height: 220px;
+    height: 260px;
+  }
+
+
+
+  .typedText {
+    width: 430px;
+    font-size: 55px;
+    color: #0F0222;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    @include media-max($lg-break) {
+      font-size: 45px;
+    }
+    @include media-max($md-break) {
+      font-size: 40px;
+    }
+  }
+}
+
+.btnLine {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  @include media-max(1400) {
+    margin-top: 20px;
+  }
+  @include media-max(991) {
+    margin-top: 50px;
+  }
+  //@include media-max($md-break) {
+  //  margin-top: 40px;
+  //}
+
+  .btnCreate {
+    @include btn-reset();
+    font-size: 20px;
+    line-height: 1;
+    background: #FF5A00;
+    height: 57px;
+    width: 197px;
+    border-radius: 45px;;
+    border: none;
+    display: flex;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+
+    &:hover, &:active {
+      opacity: 0.8;
+      transition: $transition;
+    }
+
+    @include media-max($lg-break) {
+      font-size: 18px;
+      height: 50px;
+      width: 180px;
+    }
+  }
+}
+
+.linkBlock {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  //margin: 0 auto;
+  justify-content: flex-start;
+  padding-bottom: 45px;
+
+  @include media-max($md-break) {
+    width: 250px;
+  }
+  @include media-max($sm-break) {
+    justify-content: center;
+    margin-top: 30px;
+  }
+  @include media-max($sm-break) {
+  }
+
+  .iconLink {
+    @include btn-reset();
+    width: 135px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    cursor: pointer;
+
+    &:hover, &:active {
+      opacity: 0.8;
+      transition: $transition;
+    }
+
+    @include media-max($lg-break) {
+      width: 115px;
+      height: 45px;
+    }
+    @include media-max($sm-break) {
+      width: 165px;
+      height: 90px;
+    }
+    @include media-max($xs-break) {
+      width: 115px;
+      height: 45px;
+    }
+  }
+
+  .appStore {
+    background-image: url("../../image/svg/AppStore.svg");
+    margin-right: 15px;
+  }
+
+  .googlePay {
+    width: 135px;
+    height: 50px;
+    background-image: url("../../image/svg/play-market-correct.svg");
+    @include media-max($lg-break) {
+      width: 115px;
+      height: 45px;
+    }
+    @include media-max($sm-break) {
+      width: 165px;
+      height: 90px;
+    }
+    @include media-max($xs-break) {
+      width: 115px;
+      height: 45px;
+    }
+  }
+}

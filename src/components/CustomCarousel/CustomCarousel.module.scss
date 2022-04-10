@@ -1,0 +1,129 @@
+@import "../../scss/settings";
+@import "../../scss/mixins";
+
+.customCarousel {
+  margin: 0 -10px;
+  position: relative;
+  width: calc(100% + 20px);
+  min-height: 550px;
+  //overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  @include media-max($lg-break) {
+    min-height: 470px;
+  }
+  @include media-max($md-break) {
+    width: 100%;
+  }
+}
+
+
+.arrowButton {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  outline: none;
+  right: 0;
+  width: 9em;
+  top: 0;
+  height: 100%;
+  @include btn-reset();
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+
+
+  @include media-max($md-break) {
+    width: 28px;
+    top: calc(50% - 20px);
+    height: 28px;
+  }
+  @include media-max($sm-break) {
+    top: 0;
+    height: 100%;
+    width: 8em;
+  }
+  @include media-max($xs-break) {
+    width: 32px;
+    top: calc(50% - 16px);
+    height: 32px;
+  }
+
+  svg {
+    display: none;
+    width: 40px;
+    height: 40px;
+    fill: $white;
+    border-radius: 50px;
+    @include media-max($md-break) {
+      display: block;
+    }
+    @include media-max($sm-break) {
+      display: none;
+    }
+    @include media-max($xs-break) {
+      display: block;
+    }
+  }
+
+  &:first-child {
+    left: 0;
+    @include media-max($md-break) {
+      left: 10px;
+    }
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:last-child {
+    right: 0;
+    @include media-max($md-break) {
+      right: 10px;
+    }
+  }
+
+  &:hover {
+    svg {
+      fill: $themeColorSimilar;
+    }
+  }
+}
+
+.slidersWrapper {
+  width: calc(100% - 18em);
+  max-width: 1200px;
+  margin: 0 auto 10px auto;
+  flex-shrink: 0;
+  overflow: visible;
+  @include media-max($lg-break) {
+    width: calc(100% - 10em);
+    //width: calc(100% - 15em);
+  }
+  @include media-max($md-break) {
+    width: 100%;
+    min-width: 300px;
+  }
+  @include media-max($sm-break) {
+    width: calc(100% - 12em);
+  }
+  @include media-max($xs-break) {
+    width: 100%;
+    min-width: 250px;
+  }
+}
+
+.sliders {
+  display: flex;
+  transition-duration: 350ms;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+}

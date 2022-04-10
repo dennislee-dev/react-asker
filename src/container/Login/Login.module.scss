@@ -1,0 +1,194 @@
+@import "../../scss/settings";
+@import "../../scss/mixins";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 112px 20px 19px;
+  justify-content: space-between;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  @include media-max($md-break) {
+    padding: 20px 20px 19px;
+  }
+
+  @media screen and (max-height: 690px) {
+    padding: 25px 20px 19px;
+  }
+  @include media-max($xs-break) {
+    padding: 20px 20px 19px;
+  }
+}
+
+.arrowBtnWrap {
+  @include btn-reset();
+  position: absolute;
+  top: 32px;
+  left: 31px;
+  display: flex;
+  width: 32px;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    opacity: 0.8;
+    transition: $transition;
+  }
+}
+
+.arrowBack {
+  width: 20px;
+  min-width: 20px;
+  height: 19px;
+}
+
+.logoBox {
+  display: flex;
+  width: 315px;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  //@media screen and (max-height: 690px) {
+  //  padding-top: 50px;
+  //}
+  //@include media-max($sm-break) {
+  //  padding-top: 10px;
+  //}
+
+  .questionIcon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo {
+    width: 115px;
+    height: 42px;
+  }
+}
+
+.loginForm {
+  width: 315px;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  @include media-max($sm-break) {
+    input {
+     height: 35px;
+    }
+  }
+
+}
+
+.emailIcon {
+  width: 18px;
+  height: 14px;
+  fill: #ADB8FA;
+}
+
+.lockIcon {
+  width: 15px;
+  height: 18px;
+  fill: #ADB8FA;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  color: $white;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: $main-font;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.greenText {
+  color: $themeColorBase;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    opacity: .8;
+    transition: $transition
+  }
+}
+
+.text {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  color: $white;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  font-family: $main-font;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  &.paddingTop {
+    margin-top: 15px;
+    text-decoration: none;
+
+    &:hover {
+      opacity: .8;
+      transition: $transition
+    }
+  }
+}
+
+.buttonBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.linePhone {
+  min-width: 148px;
+  height: 5px;
+  margin-top: 11px;
+  fill: $white;
+  opacity: .2
+}
+
+.arrowBtn {
+  isplay: flex;
+  position: absolute;
+  min-width: 30px;
+  height: 30px;
+  top: 14px;
+  fill: #324ADD;
+  right: 14px;
+}
+.HomeStartContainer{
+  position: absolute;
+  //top: 50%;
+  //left: 50%;
+  //transform: translate(-80%,-80%);
+}
+.HomeStartContainerMain{
+  position: revert;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,667 @@
+@import "../../scss/settings";
+@import "../../scss/mixins";
+
+.askerWrapper {
+  width: 100%;
+  height: 100%;
+  padding-top: 115px;
+  @include media-max($sm-break) {
+    padding-top: 55px;
+    //padding-top: 55px;
+    display: flex;
+    align-items: center;
+  }
+  @include media-max($xs-break) {
+    padding-top: 0;
+  }
+}
+
+
+.askerRow {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: nowrap;
+  @include media-max($sm-break) {
+    padding: 0 13vw;
+  }
+  @include media-max($xs-break) {
+    padding: 0 1vw;
+    height: auto;
+  }
+}
+
+.askerCol {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  border-radius: 26px;
+  position: relative;
+  @include media-max($md-break) {
+    height: 45vh;
+  }
+  @include media-max($xs-break) {
+    height: 45vh;
+  }
+
+}
+
+.withPadding {
+  padding-top: 115px;
+}
+
+.imgWrap {
+  display: flex;
+  position: relative;
+  z-index: 3;
+  border-radius: 26px;
+  background-image: url("../../image/svg/AskerPhone.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  left: 30px;
+  height: 85%;
+  width: 50%;
+  padding: 0 22px;
+  min-width: 300px;
+  max-height: 532px;
+  min-height: 390px;
+  @include animationJSAnother();
+  @include media-max($lg-break) {
+    min-width: 230px;
+  }
+  @include media-max($md-break) {
+    min-width: 200px;
+    left: 15px;
+    //min-height: 300px;
+  }
+  @include media-max($sm-break) {
+    min-width: 200px;
+  }
+  @include media-max($xs-break) {
+    min-width: 180px;
+    left: 10px
+  }
+  @include media-max($l-break) {
+    min-width: 158px;
+    left: 0;
+  }
+
+  .shadow {
+    position: absolute;
+    top: 77px;
+    width: 15em;
+    height: 115px;
+    background: rgba(173, 184, 250, 0.3);
+    filter: blur(7px);
+
+    @include media-max($lg-break) {
+      top: 60px;
+      height: 5em;
+      left: 55px;
+      width: 10em;
+    }
+    @include media-max($md-break) {
+      width: 10.5em;
+      left: 16px;
+    }
+    @include media-max($xs-break) {
+      width: 9em;
+      top: 53px;
+      height: 4em;
+      left: 16px;
+    }
+    @include media-max($l-break) {
+      width: 9em;
+      top: 43px;
+      height: 4em;
+      left: 16px;
+    }
+  }
+}
+
+.listingImg {
+  position: absolute;
+  left: -26px;
+  top: 62px;
+  width: 16em;
+  height: 9em;
+  //height: 15vh;
+  @include media-max($lg-break) {
+    left: -12px;
+    top: 47px;
+    width: 13em;
+    height: 6em;
+    //height: 13vh;
+  }
+  @include media-max($md-break) {
+    width: 12em;
+    min-height: 85px;
+  }
+  @include media-max($sm-break) {
+    width: 10em;
+    min-height: 76px;
+  }
+
+  @include media-max($xs-break) {
+    top: 39px;
+    left: -15px;
+    height: 5em;
+  }
+}
+
+.iconImg {
+  background-image: url("../../image/svg/ListingImg.svg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  transform: translateZ(10px);
+  @include animationJS();
+}
+
+.imgWrapStatic {
+  display: flex;
+  position: absolute;
+  border-radius: 26px;
+  background-image: url("../../image/svg/AskerPhoneStatic.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  left: 4.5em;
+  //top: 27px;
+  height: 65vh;
+  width: 50%;
+  padding: 0 22px;
+  min-width: 315px;
+  //max-height: 622px;
+  min-height: 490px;
+  top: 35px;
+  @include animationJS();
+  @include media-max($lg-break) {
+    min-width: 220px;
+    min-height: 422px;
+  }
+  @include media-max($md-break) {
+    min-width: 170px;
+    min-height: 322px;
+    height: 64vh;
+    left: 4em;
+  }
+  @include media-max($sm-break) {
+    left: 2em;
+  }
+  @include media-max($xs-break) {
+    left: 2vw;
+    min-width: 180px;
+    min-height: 300px;
+  }
+  @include media-max($l-break) {
+    left: 1vw;
+    min-width: 162px;
+    height: 45vh;
+    min-height: 330px;
+  }
+
+}
+
+.question {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 4;
+  width: 100%;
+  height: 63px;
+
+  .iconTop {
+    display: flex;
+    position: absolute;
+    border-radius: 4px;
+    background-image: url("../../image/svg/QuestionTop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: -6em;
+    top: -8em;
+    height: 11em;
+    width: 25em;
+    padding: 0;
+    @include animationJS();
+
+    @include media-max($lg-break) {
+      top: -7em;
+      height: 9em;
+      width: 13em;
+    }
+    @include media-max($sm-break) {
+      top: -6em;
+      height: 7em;
+    }
+    @include media-max($xs-break) {
+      top: -4em;
+      height: 6em;
+    }
+  }
+}
+
+
+.imgCreatePhone {
+  background-image: url("../../image/svg/CreatePhone.svg");
+  left: 3em;
+}
+
+.questionsWrap {
+  overflow-y: hidden;
+  overflow-x: visible;
+  height: calc(100vh - 24px);
+  left: 29px;
+  width: calc(50% + 95px);
+  top: -115px;
+  position: relative;
+
+
+
+  &:hover {
+    overflow-y: auto;
+  }
+}
+
+.questionsCol {
+  width: 100%;
+  overflow-x: visible;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.questionBox {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  width: 100%;
+  height: 74px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  margin-bottom: 1em;
+  @include media-max($lg-break) {
+    width: 100%;
+    min-width: 250px;
+  }
+
+  .questionIcon {
+    width: 26px;
+    min-width: 26px;
+    height: 28px;
+    margin-right: 15px;
+  }
+
+  .clockIcon {
+    width: 52px;
+    min-width: 52px;
+    height: 49px;
+    position: relative;
+  }
+
+  .questionText {
+    font-family: $main-font;
+    font-weight: 400;
+    color: $text;
+    font-size: 15px;
+    width: 191px;
+  }
+
+}
+
+.createBox {
+  @include btn-reset();
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 51px;
+  padding-right: 15px;
+  width: calc(100% - 14px);
+  height: 54px;
+  min-height: 54px;
+  background: $themeColor;
+  border-radius: 15px;
+  margin: 0px 0 17px;
+
+  &:hover, &:active {
+    opacity: 0.8;
+    transition: $transition;
+  }
+
+  .questionText {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .addIcon {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+  }
+}
+
+.questionBottom {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 3;
+  width: 100%;
+  height: 63px;
+
+  .iconBottom {
+    display: flex;
+    position: absolute;
+    border-radius: 4px;
+    top: -6vw;
+    background-image: url("../../image/svg/QuestionBottom.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 11em;
+    width: 25em;
+    left: -209px;
+    padding: 0;
+    @include animationJS();
+    @include media-max($lg-break) {
+      top: -16vw;
+      left: -14vw;
+      height: 9em;
+      width: 21em;
+    }
+    @include media-max($md-break) {
+      top: -5vw;
+      width: 16em;
+    }
+    @include media-max($sm-break) {
+      top: -8vw;
+      width: 14em;
+    }
+    @include media-max($xs-break) {
+      top: -10vw;
+      width: 12em;
+      display: none;
+    }
+  }
+}
+
+.floatingBoxBottom {
+  position: absolute;
+  top: -30px;
+  left: -150px;
+  z-index: 3;
+  width: 284px;
+  height: 60px;
+  filter: drop-shadow(0px 10.9002px 54.501px rgba(84, 104, 255, 0.5));
+  backdrop-filter: blur(22.7088px);
+  border-radius: 14px;
+  @include animationJSDifferent();
+  @include media-max($lg-break) {
+    top: -13vw;
+    left: -128px;
+    z-index: 3;
+    width: 235px;
+    height: 58px;
+    border-radius: 9px;
+  }
+  @include media-max($md-break) {
+    top: 7em;
+  }
+  @include media-max($xs-break) {
+    top: 2em;
+    left: -138px;
+    width: 191px;
+    height: 50px;
+  }
+
+  .circleBox {
+    min-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 4px solid #AEB8FF;
+    margin-right: 13px;
+    @include media-max($lg-break) {
+      min-width: 30px;
+      height: 30px;
+      margin-right: 9px;
+      border: 3px solid #AEB8FF;
+    }
+    @include media-max($xs-break) {
+      min-width: 25px;
+      height: 25px;
+      margin-right: 7px;
+    }
+  }
+
+  .floatingBottomContent {
+    background: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    //filter: drop-shadow(0px 10.9002px 54.501px rgba(84, 104, 255, 0.4));
+    //backdrop-filter: blur(22.7088px);
+    @include media-max($lg-break) {
+      border-radius: 9px;
+      padding: 12px;
+    }
+    @include media-max($xs-break) {
+      padding: 10px;
+    }
+
+  }
+
+  .floatingText {
+    font-family: $main-font;
+    font-size: 15px;
+    font-weight: 400;
+    color: #626262;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: calc(100% - 60px);
+    @include media-max($lg-break) {
+      dth: calc(100% - 44px);
+      font-size: 13px;
+    }
+    @include media-max($xs-break) {
+      dth: calc(100% - 38px);
+      font-size: 12px;
+    }
+  }
+
+  .iconsBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 44px;
+    align-items: center;
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    color: #7685FE;
+    position: absolute;
+    right: -3px;
+    top: -2px;
+
+    @include media-max($lg-break) {
+      font-size: 10px;
+      min-width: 40px;
+      top: -4px;
+    }
+    @include media-max($xs-break) {
+      font-size: 9px;
+      min-width: 37px;
+      top: -6px;
+    }
+
+    span{
+      position: relative;
+      top: - 14px;
+      @include media-max($lg-break) {
+
+      }
+    }
+  }
+
+  .iconClock {
+    min-width: 59px;
+    height: 59px;
+    stroke: #7685FE;
+    position: relative;
+
+    @include media-max($lg-break) {
+      min-width: 52px;
+      height: 52px;
+    }
+    @include media-max($xs-break) {
+      min-width: 48px;
+      height: 48px;
+    }
+  }
+
+}
+
+.floatingBoxTop {
+  width: 257px;
+  height: 60px;
+  position: absolute;
+  left: -5em;
+  top: -3em;
+  z-index: 3;
+  filter: drop-shadow(0px 11.688px 58.4402px rgba(84, 104, 255, 0.5));
+  backdrop-filter: blur(24px);
+  border-radius: 12px;
+  @include animationJS();
+  @include media-max($lg-break) {
+    width: 215px;
+    height: 50px;
+    border-radius: 8px;
+  }
+  @include media-max($md-break) {
+    top: -3em;
+  }
+  @include media-max($xs-break) {
+    width: 186px;
+    height: 49px;
+  }
+
+
+  .circleBox {
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 4px solid #AEB8FF;
+    margin-right: 13px;
+    @include media-max($lg-break) {
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 3px solid #AEB8FF;
+      margin-right: 9px;
+    }
+  }
+
+  .floatingBottomContent {
+    background: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    @include media-max($lg-break) {
+      padding: 12px;
+      border-radius: 10px;
+    }
+    @include media-max($xs-break) {
+      padding: 10px;
+      border-radius: 9px;
+    }
+
+  }
+
+  .floatingText {
+    font-family: $main-font;
+    font-size: 14px;
+    font-weight: 400;
+    color: #626262;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: calc(100% - 60px);
+    @include media-max($lg-break) {
+      font-size: 12px;
+      width: calc(100% - 40px);
+    }
+    @include media-max($xs-break) {
+      font-size: 10px;
+      width: calc(100% - 32px);
+    }
+  }
+
+  .iconsBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 44px;
+    align-items: center;
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    color: #7685FE;
+    position: absolute;
+    right: -3px;
+    top: -2px;
+    @include media-max($lg-break) {
+      font-size: 10px;
+      min-width: 40px;
+      top: -6px;
+    }
+    @include media-max($xs-break) {
+      font-size: 8px;
+      min-width: 36px;
+    }
+
+    span{
+      position: relative;
+      top: - 14px
+    }
+  }
+
+  .iconClock {
+    min-width: 59px;
+    height: 59px;
+    stroke: #7685FE;
+    position: relative;
+    @include media-max($lg-break) {
+      min-width: 50px;
+      height: 50px;
+    }
+    @include media-max($lg-break) {
+      min-width: 48px;
+      height: 48px;
+    }
+  }
+}
+

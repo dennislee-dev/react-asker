@@ -1,0 +1,792 @@
+@import "../../scss/settings";
+@import "../../scss/mixins";
+
+.createContainerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.createContainer {
+  display: flex;
+  align-items: center;
+  text-align: left!important;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-width: 100%;
+  padding: 0 20px;
+  @include media-max($sm-break) {
+   padding: 100px 20px;
+  }
+}
+
+.contantWrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 100%;
+  width: 340px;
+  min-height: 200px;
+  background-color: #FDFDFD;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.rotate {
+  transform: rotate(-315deg);
+  position: absolute;
+  bottom: -20px;
+  z-index: -1;
+  left: calc(50% - 18px);
+}
+
+.questionBlock {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  width: calc(100% - 85px);
+  @include media-max($sm-break) {
+    width: 100%;
+  }
+}
+
+.createLogo {
+  min-width: 122px;
+  height: 122px;
+  position: absolute;
+  top: 18px;
+  left: 0;
+  @include media-max($sm-break) {
+    display: none;
+  }
+}
+
+.questionBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  width: 100%;
+  //width: 231px;
+}
+
+.questionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 14px;
+  width: 100%;
+  padding: 0 15px 0 12px;
+  margin-bottom: 5px;
+
+  &.questionItemSolid {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 3px 19px rgba(60, 128, 209, 0.09);
+    min-height: 50px;
+  }
+  &.questionItemDisabled{
+    background-color: rgba(173, 184, 250, 0.1);
+    border: 1px dashed rgba(173, 184, 250, 0.5)
+  }
+
+  &.questionItemDash {
+    background: rgba(173, 184, 250, 0.1);
+    border: 1px dashed rgba(173, 184, 250, 0.5);
+    box-sizing: border-box;
+    min-height: 65px;
+  }
+}
+
+.timesBox {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 2;
+  span {
+    color: #ADB8FA;
+
+    &.active {
+      color: #7685FE;
+    }
+  }
+}
+
+.dash {
+  border-left: 2px solid #ADB8FA;
+  height: 18px;
+}
+
+.textBox {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  //padding: 11px 14px;
+  width: calc(100% - 5px);
+  color: rgba(96, 111, 129, 0.9);
+
+  input {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    //min-height: 52px;
+    //height: 60px;
+    font-size: 12px;
+    line-height: 1;
+    text-align: start;
+    color: $darkText;
+    font-weight: 400;
+    border: none;
+    background: none;
+    appearance: none;
+    min-height: 10px;
+    padding: 3px 5px 3px 0;
+    //&:disabled{
+    //  background-color: red;
+    //}
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+.iconWrap {
+  @include btn-reset();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7685FE;
+  min-width: 31px;
+  height: 31px;
+  box-shadow: 0px 8.12698px 20.3175px rgba(84, 104, 255, 0.3);
+  border-radius: 7.31429px;
+
+  &:hover, &:active {
+    opacity: 0.8;
+    transition: $transition;
+  }
+}
+
+.iconWrapCheck {
+  background-color: #00D9CD;
+  margin-right: 10px;
+  @include media-max($sm-break) {
+    //margin-right: 0;
+  }
+}
+.checkIcon {
+  min-width: 12px;
+  height: 10px;
+
+}
+
+.editIcon {
+  min-width: 16px;
+  height: 15px;
+  fill: $white;
+}
+
+
+.buttonBox {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.buttonStyle  {
+  background: #5468FF;
+  width: 100%;
+}
+.arrowTop{
+  transform: rotate(-90deg);
+}
+.buttonStylePublich  {
+  background: #00D9CD;
+  width: 100%;
+}
+
+.plusIconBox {
+  position: absolute;
+  top: calc(50% - 16px);
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3D56F0;
+  border-radius: 50%;
+
+  .plusIcon {
+    min-width: 26px;
+    height: 16px;
+    fill: $white;
+  }
+}
+.rotateT{
+  position: absolute;
+  bottom: -22px;
+  z-index: -1;
+  fill: #fcfcff;
+  left: calc(50% - 12px);
+  width: 36px;
+  height: 24px;
+}
+
+.rotateT_two {
+  //bottom: -20px;
+}
+
+.arrowTopGreen {
+  transform: rotate(-90deg);
+  fill: #44BCB6;
+}
+
+// create two ----------//
+
+
+.askerWrapper {
+  width: 100%;
+  height: 100%;
+
+  .askerRow {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+    padding: 0 0 0 12px;
+    @media screen and (min-width: 768px) and (max-width: 1091px) {
+      flex-direction: column;
+    }
+    @include media-max($xs-break) {
+      padding: 15px;
+      flex-direction: column;
+    }
+  }
+
+
+  .askerCol {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    //left: 120px;
+    margin-right: 14px;
+    @media screen and (min-width: 768px) and (max-width: 1091px) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    @include media-max($xs-break) {
+      width: 100%;
+    }
+    @include media-max($xs-break) {
+      width: 100%;
+    }
+  }
+
+  .contantWrapTwo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 100%;
+    width: 340px;
+    max-height: 325px;
+    min-height: 200px;
+    background-color: #FDFDFD;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 12px;
+    @include media-max($xs-break) {
+      width: 100%;
+    }
+  }
+
+
+  .withPadding {
+    padding-top: 115px;
+  }
+
+  .imgWrap {
+    display: flex;
+    position: relative;
+    z-index: 3;
+    border-radius: 26px;
+    background-image: url("../../image/svg/AskerPhone.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    left: 30px;
+    height: 57vh;
+    width: 50%;
+    padding: 0 22px;
+    min-width: 300px;
+    max-height: 532px;
+    @include media-max($lg-break) {
+      min-width: 14em;
+      left: 20px;
+      padding: 0 15px;
+      //min-width: 280px;
+    }
+    @include media-max($md-break) {
+      min-width: 260px;
+      left: 15px;
+    }
+
+    .shadow {
+      position: absolute;
+      top: 77px;
+      width: 16em;
+      height: 115px;
+      background: rgba(173, 184, 250, 0.3);
+      filter: blur(7px);
+
+      @include media-max($lg-break) {
+        top: 60px;
+        width: 11.5em;
+        height: 5em;
+      }
+    }
+  }
+
+  .listingImg {
+    position: absolute;
+    left: -26px;
+    top: 62px;
+    width: 18em;
+    height: 16vh;
+    @include media-max($lg-break) {
+      left: -12px;
+      top: 47px;
+      width: 12em;
+      height: 13vh;
+    }
+
+  }
+
+  .iconImg {
+    background-image: url("../../image/svg/ListingImg.svg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    transform: translateZ(10px);
+    @include animationJS();
+  }
+
+  .imgWrapStatic {
+    display: flex;
+    position: absolute;
+    border-radius: 26px;
+    background-image: url("../../image/svg/AskerPhoneStatic.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    left: 5em;
+    top: 27px;
+    height: 74vh;
+    width: 50%;
+    padding: 0 22px;
+    min-width: 315px;
+    max-height: 622px;
+    @include media-max($lg-break) {
+      min-width: 15em;
+      min-height: 21em;
+      //max-height: auto;
+    }
+    @include media-max($md-break) {
+      min-width: 260px;
+    }
+  }
+
+  .question {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 63px;
+
+    .iconTop {
+      display: flex;
+      position: absolute;
+      border-radius: 4px;
+      background-image: url("../../image/svg/QuestionTop.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      left: -6em;
+      top: -8em;
+      height: 11em;
+      width: 25em;
+      padding: 0;
+      @include animationJS();
+
+      @include media-max($lg-break) {
+        top: -7em;
+        height: 9em;
+        width: 21em;
+      }
+    }
+  }
+
+  .questionBottom {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 3;
+    width: 100%;
+    height: 63px;
+
+    .iconBottom {
+      display: flex;
+      position: absolute;
+      border-radius: 4px;
+      top: -14em;
+      background-image: url("../../image/svg/QuestionBottom.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      //left: -18vw;
+      height: 11em;
+      width: 25em;
+      left: -209px;
+      padding: 0;
+
+      @include animationJS();
+
+      @include media-max($lg-break) {
+        top: -16em;
+        left: -18vw;
+        height: 9em;
+        width: 21em;
+      }
+
+    }
+  }
+
+  .imgCreatePhone {
+    background-image: url("../../image/svg/CreatePhone.svg");
+    left: 3em;
+  }
+
+  .askerScrol {
+
+    overflow-x: hidden;
+    height: calc(100vh - 24px);
+    left: 0;
+    width: calc(50%);
+    top: 0;
+    position: relative;
+    padding-right: 10px;
+    @media screen and (min-width: 768px) and (max-width: 1091px) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 40px 0;
+
+
+    }
+    @include media-max($xs-break) {
+      overflow-y: auto;
+      width: 100%;
+      padding-right: 0;
+      margin: 40px 0;
+    }
+
+
+    &:hover {
+      width: calc(50%);
+      overflow-y: auto;
+      @media screen and (min-width: 768px) and (max-width: 1091px) {
+        overflow-y: auto;
+        width: 100%;
+      }
+      @include media-max($xs-break) {
+        overflow-y: auto;
+        width: 100%;
+      }
+
+      .questionsWrap {
+        width: calc(100% );
+      }
+    }
+  }
+
+
+  .questionsWrap {
+    width: 100%;
+    height: 100%;
+    max-width: 341px;
+    @include media-max($xs-break) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-width: none;
+      margin-left: 2px;
+    }
+
+  }
+
+
+  .questionsCol {
+    display: flex;
+    width: 100%;
+    overflow-x: visible;
+    min-height: 100%;
+    flex-direction: column;
+    align-items: center;
+   justify-content: center;
+    @include media-max($sm-break) {
+      padding-bottom: 40px;
+    }
+    @include media-max($xs-break) {
+     align-items: flex-start;
+      flex-wrap: wrap;
+      flex-direction:unset;
+      justify-content: space-between;
+    }
+  }
+
+  .questionBoxList {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    width: 100%;
+    height: 74px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 14px;
+    margin-bottom: 1em;
+
+    @include media-max($lg-break) {
+      min-width: 250px;
+    }
+    @include media-max($sm-break) {
+      min-width: 200px;
+      max-width: 200px;
+    }
+    @include media-max(475) {
+      max-width: 100%;
+    }
+
+
+    .questionIcon {
+      width: 26px;
+      min-width: 26px;
+      height: 28px;
+      margin-right: 15px;
+    }
+
+    .clockIcon {
+      stroke: #ADB8FA;
+      width: 52px;
+      min-width: 52px;
+      height: 49px;
+      position: relative;
+    }
+
+    .questionText {
+      font-family: $main-font;
+      font-weight: 400;
+      color: $text;
+      font-size: 15px;
+      width: 191px;
+    }
+
+  }
+
+  .createBox {
+    @include btn-reset();
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 51px;
+    padding-right: 15px;
+    //width: 284px;
+    width: calc(100% - 14px);
+    height: 54px;
+    min-height: 54px;
+    background: $themeColor;
+    border-radius: 15px;
+    margin: 0px 0 17px;
+
+    &:hover, &:active {
+      opacity: 0.8;
+      transition: $transition;
+    }
+
+    .questionText {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1.2;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .addIcon {
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.questionItemEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 14px;
+  width: 100%;
+  padding-left: 21px;
+  //min-height: 74px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 3px 19px rgba(60, 128, 209, 0.09);
+  animation: fadeInOut ease 1.1s;
+
+
+  .iconClock {
+    width: 52px;
+    min-width: 52px;
+    height: 49px;
+    position: relative;
+    stroke: #ADB8FA;
+  }
+
+}
+.activeQuestionText{
+  font-family: $main-font;
+  font-weight: 400;
+  color: $text;
+  font-size: 15px;
+  margin-left: 20px;
+  width: 191px;
+}
+.contantWrapTwoModal {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  max-width: 100%;
+  width: 340px;
+  max-height: 325px;
+  min-height: 300px;
+  background-color: #FDFDFD;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 12px;
+  @include media-max($xs-break) {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    min-height: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    min-height: 49px;
+    height: auto;
+  }
+}
+
+@-moz-keyframes fadeInout {
+  0% {
+    opacity: 0;
+    min-height: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    min-height: 49px;
+    height: auto;
+  }
+}
+
+@-webkit-keyframes fadeInout {
+  0% {
+    opacity: 0;
+    min-height: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    min-height: 49px;
+    height: auto;
+  }
+}
+
+@-o-keyframes fadeInout {
+  0% {
+    opacity: 0;
+    min-height: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    min-height: 49px;
+    height: auto;
+  }
+}
+
+@-ms-keyframes fadeInout {
+  0% {
+    opacity: 0;
+    min-height: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    min-height: 74px;
+    height: 74px;
+  }
+}

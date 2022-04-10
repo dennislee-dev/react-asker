@@ -1,0 +1,657 @@
+@import "settings";
+@import "mixins";
+
+/* FOR ALL FORM : START */
+.log-reg-form {
+  width: 100%;
+  max-width: 315px;
+  margin: auto;
+
+  .head {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+
+    h4 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+  }
+
+  .cont {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 5px;
+    margin-bottom: 25px;
+
+    p {
+      font-size: 16px;
+      font-weight: normal;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: #00d9cd;
+      font-size: 16px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+
+    }
+  }
+
+  .cust-form-col {
+    width: 100%;
+    margin-bottom: 20px;
+
+    &.fw-25 {
+      width: 25%;
+    }
+
+    &.fw-33 {
+      width: 33.33%;
+    }
+
+    &.fw-50 {
+      width: 50%;
+    }
+
+    &.fw-75 {
+      width: 25%;
+    }
+
+  }
+
+  .forgot-pass-para {
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+
+    a {
+      display: inline-block;
+      color: #00d9cd;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+
+    }
+  }
+
+  .text-filled-modal {
+    width: 100%;
+    background-color: #ffffff;
+
+    &.with-icon {
+      //box-shadow: 0px 12px 19px rgba(60, 128, 209, 0.09);
+      //border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 15px 0 12px;
+      margin-bottom: 10px;
+      background-color: $white;
+      box-shadow: 0px 10px 25px rgba(84, 104, 255, 0.3);
+      border-radius: 10px;
+      height: 50px;
+
+      //display: flex;
+      flex-wrap: wrap;
+
+      .icon {
+        width: 70px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+        color: #5468ff;
+        line-height: 1;
+      }
+
+      .pass-show-hide {
+        width: 60px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+
+        a {
+          color: #bcbdbf;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1;
+        }
+
+      }
+
+      input,
+      textarea,
+      select {
+        width: calc(100% - 70px);
+      }
+
+    }
+
+    input,
+    textarea,
+    select {
+      height: 30px;
+      min-height: 30px;
+      border: none;
+      padding: 0 15px 0 0;
+      caret-color: #5468ff;
+      background-color: transparent;
+      //color: #344356;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 100%;
+      line-height: 1;
+      text-align: start;
+      color: $darkText;
+      font-weight: 400;
+      font-family: $main-font;
+      padding-right: 15px;
+      background: none;
+      appearance: none;
+
+      &:last-child {
+        border-radius: 0 20px 20px 0;
+      }
+
+      &::placeholder {
+        color: #979797;
+        font-weight: 400;
+        text-align: start;
+      }
+
+      &:hover,
+      &:focus {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        appearance: none;
+        -webkit-appearance: none;
+      }
+
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    &.password-filled {
+
+      input {
+        width: calc(100% - 140px);
+      }
+
+    }
+
+    &.otp-filled {
+      position: relative;
+      background-color: transparent;
+      height: 65px;
+
+      input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: calc(100% + 85px);
+        height: 100%;
+        //padding: 0;
+        color: #344356;
+        font-size: 25px;
+        font-weight: bold;
+        z-index: 1;
+        letter-spacing: 70px;
+        padding: 0 24px;
+
+        &::selection {
+          background-color: transparent;
+          color: #344356;
+        }
+
+      }
+
+      .otp-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          width: 65px;
+          height: 65px;
+          background-color: #ffffff;
+          border-radius: 15px;
+          box-shadow: 0px 12px 19px rgba(60, 128, 209, 0.08);
+        }
+
+      }
+    }
+  }
+
+  .mobile-filled {
+
+    > select,
+    > .bootstrap-select {
+      width: 60px !important;
+    }
+
+    > input {
+      width: calc(100% - 140px);
+    }
+
+    &.with-icon {
+
+      > input {
+        width: calc(100% - 140px);
+        padding-left: 15px;
+      }
+
+    }
+
+    .bootstrap-select {
+
+      button.dropdown-toggle {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          width: 2px;
+          height: 28px;
+          margin: auto;
+          background-color: #344356;
+          border: none;
+          opacity: 0.2;
+        }
+
+      }
+    }
+  }
+
+  .select-filled {
+
+    .bootstrap-select {
+
+      button.dropdown-toggle {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        outline: 0 !important;
+        box-shadow: none;
+      }
+
+      .filter-option-inner-inner {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        color: #344356;
+        font-size: 20px;
+        font-weight: normal;
+        font-family: "Roboto", sans-serif;
+      }
+
+      > .dropdown-menu {
+        width: 280px;
+        height: 350px;
+        padding: 0 0 8px;
+        border-radius: 8px;
+
+        > .inner {
+          -webkit-scrollbar-width: none;
+          -moz-scrollbar-width: none;
+          -o-scrollbar-width: none;
+          -ms-scrollbar-width: none;
+          scrollbar-width: none;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+        }
+      }
+
+      .bs-searchbox {
+        width: 100%;
+        padding: 5px;
+
+        input {
+          width: 100%;
+          height: auto;
+          padding: 5px 10px;
+          border: 1px solid #5468ff;
+          border-radius: 8px;
+          color: #344356;
+          font-size: 20px;
+          font-weight: normal;
+          font-family: "Roboto", sans-serif;
+          box-shadow: none;
+        }
+
+      }
+
+      .dropdown-item {
+        color: #344356;
+        font-size: 20px;
+        font-weight: normal;
+        font-family: "Roboto", sans-serif;
+
+        &:active {
+          background-color: #5468ff;
+          color: #ffffff;
+        }
+
+      }
+
+      .dropdown-menu {
+
+        li {
+
+          &.selected,
+          &.active {
+
+            a {
+              background-color: #5468ff;
+              color: #ffffff;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  .submit-filled {
+    position: relative;
+
+    input {
+      width: 100%;
+      //box-shadow: 0px 10px 25px rgb(84 104 255 / 30%);
+      //border-radius: 10px;
+      min-height: 40px;
+      height: 50px;
+      flex-wrap: wrap;
+      border: none;
+      background-color: #3d56f0;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: $main-font;
+      padding: 18px 15px;
+      border-radius: 10px;
+      box-shadow: 0px 10px 25px rgba(84, 104, 255, 0.3);
+    }
+
+    .icon {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      bottom: 0;
+      margin: auto;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      //background-color: #324add;
+
+      display: inline-flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+
+      color: #ffffff;
+
+      //.material-icons {
+      //  font-size: 16px;
+      //}
+
+    }
+  }
+}
+
+/* FOR ALL FORM : END */
+
+.modal-open {
+  /// / Kill the scroll on the body overflow:hidden;
+
+  .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+}
+
+.modal-open {
+  // Kill the scroll on the body
+  overflow: hidden;
+
+  .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+
+//// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  //margin: $modal-dialog-margin;
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
+
+//  // When fading in the modal, animate it to slide down
+  &.modal.fade  {
+      transition: opacity 0.15s linear;
+    //@include transition($modal-transition);
+    transform: $modal-fade-transform;
+  }
+  &.modal.show  {
+    transform: $modal-show-transform;
+  }
+
+  // When trying to close, animate focus to scale
+  &.modal.modal-static  {
+    transform: $modal-scale-transform;
+  }
+}
+
+
+.share-email-modal {
+  max-width: 420px;
+  width: 420px;
+  min-height: 420px;
+}
+
+.modal-content {
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 4.75rem auto;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-dialog {
+  max-width: 420px;
+}
+
+.theme-bg {
+  margin: auto;
+  background: rgba(84, 104, 255, 1);
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    //left: 0;
+    bottom: 0;
+    right: -56px;
+    //right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/svg/GrayBg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+.center-box-inner {
+  z-index: 5;
+}
+}
+
+.modal {
+//  top: 50%;
+//  left: 50%;
+//  transform: translate(-50%, -50%);
+}
+
+a.shareAskerModalClose {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+/// Container that the modal scrolls within
+  .modal {
+    position: fixed;
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 1005;
+    //display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    // Prevent Chrome on Windows from adding a focus outline. For details, see
+    // https://github.com/twbs/bootstrap/pull/10951.
+    outline: 0;
+  }
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  pointer-events: none;
+
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    ansition: opacity 0.15s linear;
+    transform: $modal-fade-transform;
+  }
+  .modal.show & {
+    transform: $modal-show-transform;
+  }
+
+  // When trying to close, animate focus to scale
+  .modal.modal-static & {
+    transform: $modal-scale-transform;
+  }
+}
+
+.modal-dialog-scrollable {
+
+  .modal-body {
+    overflow-y: auto;
+  }
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+
+  // Ensure `modal-dialog-centered` extends the full height of the view (IE10/11)
+  &::before {
+    display: block; // IE10
+    content: "";
+  }
+
+  // Ensure `.modal-body` shows scrollbar (IE10/11)
+  &.modal-dialog-scrollable {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    .modal-content {
+      max-height: none;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
+  pointer-events: auto;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1005;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+
+  // Fade for backdrop
+  &.fade { opacity: 0; }
+  &.show { opacity: .5; }
+}
+
+
